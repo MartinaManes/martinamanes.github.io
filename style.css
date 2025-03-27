@@ -1,6 +1,7 @@
 /* Custom styles for the navbar */
 .navbar {
     background-color: #c46a6a; /* Green background */
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .navbar a.nav-link {
