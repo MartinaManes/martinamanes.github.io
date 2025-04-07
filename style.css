@@ -1,13 +1,123 @@
-/* Custom styles for the navbar */
+/* Definición de las fuentes */
+@font-face {
+    font-family: 'MiFuente';
+    src: url('fuentes/Montserrat-SemiBold.ttf') format('woff2'),
+         url('fuentes/Montserrat-SemiBold.ttf') format('woff'),
+         url('fuentes/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MiFuente2';
+    src: url('fuentes/league-spartan.otf') format('woff2'),
+         url('fuentes/league-spartan.otf')format('woff'),
+         url('fuentes/league-spartan.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilo de la barra de navegación */
 .navbar {
-    background-color: #c46a6a; /* Green background */
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #c46a6a; /* Color de fondo */
+    font-family: 'MiFuente2';
+    
 }
 
 .navbar a.nav-link {
-    color: rgb(39, 12, 26) !important; /* White text for links */
+    color: rgb(241, 226, 234) !important; /* Color de los enlaces */
+}
+.navbar-brand {
+    color: rgb(241, 226, 234) !important; /* Color del título */
+    font-size: 1.8rem;
+}
+.navbar a.nav-link:hover {
+    color: #1f4667 !important; /* Color al pasar el ratón */
 }
 
-.navbar a.nav-link:hover {
-    color: #1f4667 !important;
+/* Estilos para los encabezados */
+h2 {
+    color: #c46a6a !important;
+    margin: 10%;
+    font-family: MiFuente;
+    padding: 5px;
+}
+
+/* Estilos del contenedor de la imagen y texto */
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.round-img {
+    width: 290px;
+    height: 290px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #c46a6a;
+    flex-shrink: 0;
+}
+
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    font-family: MiFuente;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Estilo para los iconos de las redes sociales */
+.social-icons {
+    display: none; /* Inicialmente ocultos */
+    flex-direction: column; /* Alinea los iconos verticalmente */
+    align-items: center; /* Centra los iconos */
+    gap: 10px; /* Espacio entre los iconos */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Mostrar los iconos al pasar el ratón sobre la imagen */
+.header-container:hover .social-icons {
+    display: flex; /* Los muestra cuando el ratón pasa por encima */
+}
+
+/* Estilo para los iconos (imágenes) de las redes sociales */
+.social-icon {
+    width: 40px; /* Tamaño de los iconos */
+    height: 40px;
+    transition: transform 0.3s ease; /* Efecto de transición para el zoom */
+    margin: 10px 0; /* Márgenes para separar los iconos */
+}
+
+/* Efecto de agrandado al pasar el ratón sobre los iconos */
+.social-icon:hover {
+    transform: scale(1.2); /* Efecto de agrandado */
+}
+
+/* Para los enlaces de la barra de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Para los enlaces de la barra de navegación */
+.nav-link {
+    padding: 10px;
+}
+
+/* Personaliza la fuente en todo el documento */
+body {
+    font-family: 'MiFuente2', sans-serif;
 }
