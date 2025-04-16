@@ -1,13 +1,247 @@
-/* Custom styles for the navbar */
+/* Definición de las fuentes */
+@font-face {
+    font-family: 'MiFuente';
+    src: url('fuentes/Montserrat-SemiBold.ttf') format('woff2'),
+         url('fuentes/Montserrat-SemiBold.ttf') format('woff'),
+         url('fuentes/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MiFuente2';
+    src: url('fuentes/league-spartan.otf') format('woff2'),
+         url('fuentes/league-spartan.otf')format('woff'),
+         url('fuentes/league-spartan.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MiFuente3';
+    src: url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('woff2'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf')format('woff'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Estilo de la barra de navegación */
 .navbar {
     background-color: #c46a6a; /* Green background */
     font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #c46a6a; /* Color de fondo */
+    font-family: 'MiFuente';
+    
 }
 
 .navbar a.nav-link {
-    color: rgb(39, 12, 26) !important; /* White text for links */
+    color: rgb(241, 226, 234) !important; /* Color de los enlaces */
+}
+.navbar-brand {
+    color: rgb(241, 226, 234) !important; /* Color del título */
+    font-size: 1.8rem;
+}
+.navbar a.nav-link:hover {
+    color: #1f4667 !important; /* Color al pasar el ratón */
 }
 
-.navbar a.nav-link:hover {
-    color: #1f4667 !important;
+/* Estilos para los encabezados */
+h2 {
+    color: #c46a6a !important;
+    margin: 10%;
+    font-family: MiFuente;
+    padding: 5px;
+    font-size: 300px;
 }
+
+/* Estilos del contenedor de la imagen y texto */
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+    size: 30px;
+}
+
+.round-img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #c46a6a;
+    flex-shrink: 0;
+}
+
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    font-family: MiFuente;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #333;
+
+}
+
+/* Estilo para los iconos de las redes sociales */
+.social-icons {
+    display: none; /* Inicialmente ocultos */
+    flex-direction: column; /* Alinea los iconos verticalmente */
+    align-items: center; /* Centra los iconos */
+    gap: 10px; /* Espacio entre los iconos */
+    margin-top: 20px; /* Espacio superior */
+}
+
+/* Mostrar los iconos al pasar el ratón sobre la imagen */
+.header-container:hover .social-icons {
+    display: flex; /* Los muestra cuando el ratón pasa por encima */
+}
+
+/* Estilo para los iconos (imágenes) de las redes sociales */
+.social-icon {
+    width: 40px; /* Tamaño de los iconos */
+    height: 40px;
+    transition: transform 0.3s ease; /* Efecto de transición para el zoom */
+    margin: 10px 0; /* Márgenes para separar los iconos */
+}
+
+/* Efecto de agrandado al pasar el ratón sobre los iconos */
+.social-icon:hover {
+    transform: scale(1.2); /* Efecto de agrandado */
+}
+
+/* Para los enlaces de la barra de navegación */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Para los enlaces de la barra de navegación */
+.nav-link {
+    padding: 10px;
+}
+
+/* Personaliza la fuente en todo el documento */
+body {
+    font-family: 'MiFuente2', sans-serif;
+}
+.soft-skills-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.soft-skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.flip-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra suave */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glow blanco suave */
+}
+
+.flip-card-front {
+    color:#ce5050 !important;
+    background-color: #f0a6a6!important;
+    font-size: 25px !important;
+    font-family: MiFuente;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
+}
+
+.flip-card-back {
+  background-color:#c77272ea !important;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
+}
+.titulo-habilidades {
+    font-family: 'MiFuente2';
+    font-size: 35px; /* Aumentá o bajá según te guste */
+    text-align: center; /* Si querés centrarlo */
+    color: #ca8787;
+}
+.habilidad p {
+    font-family: 'MiFuente3';
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .habilidad {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .habilidad:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 173, 239, 0.6); /* color celestito vibrante */
+  }
+  
+  .habilidad img {
+    width: 80px; /* más grande */
+    height: 80px;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(0, 173, 239, 0.4));
+  }
+  
+  .habilidad:hover img {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 12px rgba(0, 173, 239, 0.8));
+  }
+  
+  
