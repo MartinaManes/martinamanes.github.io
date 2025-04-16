@@ -15,7 +15,14 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'MiFuente3';
+    src: url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('woff2'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf')format('woff'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Estilo de la barra de navegación */
 .navbar {
     background-color: #c46a6a; /* Color de fondo */
@@ -170,15 +177,66 @@ body {
   justify-content: center;
   font-weight: bold;
   padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra suave */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glow blanco suave */
 }
 
 .flip-card-front {
-    color:#c46a6a !important;
-    background-color: #dbbebe;
+    color:#ce5050 !important;
+    background-color: #f0a6a6!important;
+    font-size: 25px !important;
+    font-family: MiFuente;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
 }
 
 .flip-card-back {
-  background-color:#c46a6a !important;
+  background-color:#c77272ea !important;
   color: #ffffff;
   transform: rotateY(180deg);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
 }
+.titulo-habilidades {
+    font-family: 'MiFuente2';
+    font-size: 35px; /* Aumentá o bajá según te guste */
+    text-align: center; /* Si querés centrarlo */
+    color: #ca8787;
+}
+.habilidad p {
+    font-family: 'MiFuente3';
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .habilidad {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .habilidad:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 173, 239, 0.6); /* color celestito vibrante */
+  }
+  
+  .habilidad img {
+    width: 80px; /* más grande */
+    height: 80px;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(0, 173, 239, 0.4));
+  }
+  
+  .habilidad:hover img {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 12px rgba(0, 173, 239, 0.8));
+  }
+  
+  
