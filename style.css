@@ -23,6 +23,14 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Cool';
+    src: url('fuentes/Coolvetica\ Rg\ It.otf') format('woff2'),
+         url('fuentes/Coolvetica\ Rg\ It.otf')format('woff'),
+         url('fuentes/Coolvetica\ Rg\ It.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Estilo de la barra de navegación */
 .navbar {
     background-color: #c46a6a; /* Color de fondo */
@@ -241,5 +249,94 @@ body {
     transform: scale(1.1) rotate(-2deg);
     filter: drop-shadow(0 0 12px rgba(0, 173, 239, 0.8));
   }
+
+ 
+  .carrusel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
   
+  /* Carrusel interno en línea horizontal */
+  .carrusel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
   
+  /* Cada slide ocupa toda la pantalla */
+  .carrusel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    box-sizing: border-box;
+  }
+  
+  /* Título a la izquierda */
+  .carrusel-item h2 {
+    flex: 1;
+    font-size: 5rem;
+    margin: 0,25;
+    color: #ca8787;
+    font-family: Cool ;
+
+  }
+  
+  /* Texto a la derecha */
+  .carrusel-item p {
+    flex: 2;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-left: 2rem;
+  
+  }
+  
+  /* Botones de navegación */
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ca8787;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: #a35d5d;
+  }
+  
+  .prev {
+    left: 1rem;
+  }
+  
+  .next {
+    right: 1rem;
+  }
+  .animate {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -21,11 +21,67 @@
               <a class="nav-link" href="contacto.html">Contacto</a>
               <a class="nav-link" href="experiencia.html">Experiencia</a>
               <a class="nav-link" href="educacion.html">Educacion</a>
-              <a class="nav-link" href="aptitudes.html">Attitudes</a>
+              <a class="nav-link" href="habilidades.html">Habilidades</a>
 
             </div>
           </div>
         </div>
       </nav>
+
+      <div class="carrusel-container">
+        <div class="carrusel">
+            <div class="carrusel-item animate">
+                <h2>Bienvenid@</h2>
+                <p>En esta sección me vas a conocer más.</p>
+            </div>
+            <div class="carrusel-item animate">
+                <h2>Edad y Fecha de Nacimiento</h2>
+                <p>Edad: 19 años | Fecha de Nacimiento: 14 de junio de 2005</p>
+            </div>
+            <div class="carrusel-item animate">
+                <h2>Lugar de Nacimiento</h2>
+                <p>Chacabuco, Buenos Aires, Argentina</p>
+            </div>
+            <div class="carrusel-item animate">
+                <h2>Mis Sueños</h2>
+                <p>Mi sueño es poder trabajar en tecnología y/o redes sociales.</p>
+                <p>Basicamente dedicarme a lo que me gusta es mi aspiración</p>
+                  <p>Vivir en el extranjero en algún futuro</p>
+            </div>
+            <div class="carrusel-item animate">
+                <h2>Atributos</h2>
+                <p>Soy una persona apasionada, comprometida y creativa.</p>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+      <script>
+        let currentIndex = 0;
+const items = document.querySelectorAll('.carrusel-item');
+const totalItems = items.length;
+
+const prevButton = document.querySelector('.prev');
+const nextButton = document.querySelector('.next');
+
+function showSlide(index) {
+    const newTransformValue = -index * 100;
+    document.querySelector('.carrusel').style.transform = `translateX(${newTransformValue}%)`;
+}
+
+prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
+    showSlide(currentIndex);
+});
+
+nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+    showSlide(currentIndex);
+});
+
+
+      </script>
+      
 </body>
 </html>
