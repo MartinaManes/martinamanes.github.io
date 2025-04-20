@@ -340,3 +340,41 @@ body {
         transform: translateY(0);
     }
 }
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #c46a6a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #a35e5e;
+}
+
+.formulario-contacto {
+  max-width: 600px;  /* ajusta el ancho como quieras */
+  margin: 0 auto;    /* lo centra */
+  background-color: #fff;
+  font-family: 'MiFuente', sans-serif;  /* Cambia acá según la fuente que quieras usar */
+  padding: 2rem;
+}
+.contacto-directo{
+  font-family: Mifuente;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+}
