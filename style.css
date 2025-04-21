@@ -15,7 +15,22 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'MiFuente3';
+    src: url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('woff2'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf')format('woff'),
+         url('fuentes/MADE\ Evolve\ Sans\ bold.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Cool';
+    src: url('fuentes/Coolvetica\ Rg\ It.otf') format('woff2'),
+         url('fuentes/Coolvetica\ Rg\ It.otf')format('woff'),
+         url('fuentes/Coolvetica\ Rg\ It.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* Estilo de la barra de navegación */
 .navbar {
     background-color: #c46a6a; /* Color de fondo */
@@ -123,4 +138,243 @@ p {
 /* Personaliza la fuente en todo el documento */
 body {
     font-family: 'MiFuente2', sans-serif;
+}
+.soft-skills-section {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.soft-skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.flip-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Sombra suave */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glow blanco suave */
+}
+
+.flip-card-front {
+    color:#ce5050 !important;
+    background-color: #f0a6a6!important;
+    font-size: 25px !important;
+    font-family: MiFuente;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
+}
+
+.flip-card-back {
+  background-color:#c77272ea !important;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Glow suave */
+
+}
+.titulo-habilidades {
+    font-family: 'MiFuente2';
+    font-size: 35px; /* Aumentá o bajá según te guste */
+    text-align: center; /* Si querés centrarlo */
+    color: #ca8787;
+}
+.habilidad p {
+    font-family: 'MiFuente3';
+    font-size: 1.1rem;
+    color: #444;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+  .habilidad {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .habilidad:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 173, 239, 0.6); /* color celestito vibrante */
+  }
+  
+  .habilidad img {
+    width: 80px; /* más grande */
+    height: 80px;
+    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 8px rgba(0, 173, 239, 0.4));
+  }
+  
+  .habilidad:hover img {
+    transform: scale(1.1) rotate(-2deg);
+    filter: drop-shadow(0 0 12px rgba(0, 173, 239, 0.8));
+  }
+
+ 
+  .carrusel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  /* Carrusel interno en línea horizontal */
+  .carrusel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  /* Cada slide ocupa toda la pantalla */
+  .carrusel-item {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    box-sizing: border-box;
+  }
+  
+  /* Título a la izquierda */
+  .carrusel-item h2 {
+    flex: 1;
+    font-size: 5rem;
+    margin: 0,25;
+    color: #ca8787;
+    font-family: Cool ;
+
+  }
+  
+  /* Texto a la derecha */
+  .carrusel-item p {
+    flex: 2;
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-left: 2rem;
+  
+  }
+  
+  /* Botones de navegación */
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ca8787;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: #a35d5d;
+  }
+  
+  .prev {
+    left: 1rem;
+  }
+  
+  .next {
+    right: 1rem;
+  }
+  .animate {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.form-control {
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+button[type="submit"] {
+  background-color: #c46a6a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #a35e5e;
+}
+
+.formulario-contacto {
+  max-width: 600px;  /* ajusta el ancho como quieras */
+  margin: 0 auto;    /* lo centra */
+  background-color: #fff;
+  font-family: 'MiFuente', sans-serif;  /* Cambia acá según la fuente que quieras usar */
+  padding: 2rem;
+}
+.contacto-directo{
+  font-family: Mifuente;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+  padding: 10px;
 }
