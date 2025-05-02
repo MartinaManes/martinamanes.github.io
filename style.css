@@ -33,8 +33,10 @@
 }
 /* Estilo de la barra de navegación */
 .navbar {
+    background-color: #c46a6a; /* Green background */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     background-color: #c46a6a; /* Color de fondo */
-    font-family: 'MiFuente2';
+    font-family: 'MiFuente';
     
 }
 
@@ -86,7 +88,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     min-width: 300px;
-    font-family: MiFuente;
+    font-family: MiFuente1;
 }
 
 p {
