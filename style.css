@@ -251,6 +251,11 @@ body {
   }
 
  
+  @font-face {
+    font-family: "Cool";
+    src: url("ruta/de/tu/fuente.woff2") format("woff2"); /* Asegurate de que esté bien la ruta */
+  }
+  
   .carrusel-container {
     position: relative;
     overflow: hidden;
@@ -258,7 +263,6 @@ body {
     height: 100vh;
   }
   
-  /* Carrusel interno en línea horizontal */
   .carrusel {
     display: flex;
     width: 100%;
@@ -266,46 +270,51 @@ body {
     transition: transform 0.5s ease-in-out;
   }
   
-  /* Cada slide ocupa toda la pantalla */
   .carrusel-item {
     min-width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 4rem;
     box-sizing: border-box;
   }
   
-  /* Título a la izquierda */
-  .carrusel-item h2 {
-    flex: 1;
-    font-size: 5rem;
-    margin: 0,25;
-    color: #ca8787;
-    font-family: Cool ;
-
+  .contenido-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
   }
   
-  /* Texto a la derecha */
-  .carrusel-item p {
+  /* TÍTULO */
+  .contenido-slide h2 {
+    flex: 1;
+    font-size: 5rem;
+    color: #ca8787;
+    font-family: "Cool", sans-serif;
+    margin: 0;
+  }
+  
+  /* TEXTO */
+  .contenido-slide p {
     flex: 2;
     font-size: 1.5rem;
     max-width: 600px;
-    margin-left: 2rem;
-  
+    margin: 0;
   }
   
-  /* Botones de navegación */
+  /* Botones navegación */
   .prev,
   .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ca8787;
+    background-color: rgba(241, 226, 234, 0.404);
     border: none;
-    color: white;
+    color: #00000059;
     font-size: 2rem;
     padding: 1rem;
     cursor: pointer;
@@ -316,7 +325,7 @@ body {
   
   .prev:hover,
   .next:hover {
-    background-color: #a35d5d;
+    background-color: #a35d5d57;
   }
   
   .prev {
@@ -326,10 +335,47 @@ body {
   .next {
     right: 1rem;
   }
+  
   .animate {
     animation: fadeInUp 1s ease-in-out;
-}
-
+  }
+  
+  .contenido-final {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contenido-final a {
+    margin-top: 1rem;
+  }
+  
+  /* RESPONSIVE - CELULARES */
+  @media (max-width: 768px) {
+    .contenido-slide {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .contenido-slide h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+  
+    .contenido-slide p {
+      font-size: 1.2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  
+    .contenido-final {
+      align-items: center;
+    }
+  
+    .contenido-final a {
+      margin-top: 1rem;
+    }
+  }
 @keyframes fadeInUp {
     from {
         opacity: 0;
