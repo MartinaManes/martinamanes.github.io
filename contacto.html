@@ -26,7 +26,17 @@
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+  
+      <!-- Toggle de idioma afuera del menú -->
+      <div class="language-toggle d-flex align-items-center ms-2">
+        <label class="switch mb-0">
+          <input type="checkbox" id="languageToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
 
       <!DOCTYPE html>
       <html lang="es">
@@ -41,52 +51,119 @@
       </head>
       <body>
         <div class="container my-5">
-          <h2 class="text-center mb-4">Como contactarme?</h2>
+          <h2 class="text-center mb-4 translate" data-key="parrafo1">¿Cómo contactarme?</h2>
         
           <form action="https://formsubmit.co/martinamanes5@gmail.com" method="POST" class="formulario-contacto border p-4 rounded shadow-sm bg-white">
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
+              <label for="nombre" class="form-label translate" data-key="labelNombre">Nombre</label>
               <input type="text" class="form-control" id="nombre" name="name" required>
             </div>
-        
+            
             <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
+              <label for="email" class="form-label translate" data-key="labelEmail">Correo electrónico</label>
               <input type="email" class="form-control" id="email" name="email" required>
             </div>
-        
+            
             <div class="mb-3">
-              <label for="asunto" class="form-label">Asunto</label>
+              <label for="asunto" class="form-label translate" data-key="labelAsunto">Asunto</label>
               <input type="text" class="form-control" id="asunto" name="_subject" required>
             </div>
-        
+            
             <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje</label>
+              <label for="mensaje" class="form-label translate" data-key="labelMensaje">Mensaje</label>
               <textarea class="form-control" id="mensaje" name="message" rows="4" required></textarea>
             </div>
-        
-            <!-- Evita el captcha -->
-            <input type="hidden" name="_captcha" value="false">
-        
-            <button type="submit" class="btn btn-primary w-100">Enviar</button>
-          </form>
-        
-          <div class="contacto-directo">
-            <p>📩 Si prefiere contactarme de forma más directa o formal, mi mail y mi número de telefono son:</p>
-            <p><strong><a href="mailto:martinamanes5@gmail.com">martinamanes5@gmail.com</a></strong></p>
-            <p>+5492352498108</p>
-
             
-            <p class="mt-3">📱 También podés escribirme por WhatsApp:</p>
-            <a href="https://wa.me/5492352498108" class="btn btn-success" target="_blank">Enviar mensaje por WhatsApp</a>
-          </div>
-        </div>
-        
-        
-          <footer class="text-center py-3 mt-5">
-              <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
-          </footer>
-      </body>
-      </html>
-      
+            <input type="hidden" name="_captcha" value="false">
+            
+            <button type="submit" class="btn btn-primary w-100 translate" data-key="botonEnviar">Enviar</button>
+            </form>
+            
+            <!-- Contenedor con animación y redes -->
+<div class="redes-contacto-container d-flex justify-content-center align-items-center flex-column mt-5">
+  <p class="mb-3 translate" data-key="contactoTextoFinal">
+    Si preferís contactarme más formalmente, también podés encontrarme en otras plataformas:
+  </p>
+
+  <!-- Animación Lottie -->
+  <div id="mianimacion" style="width: 300px; height: 300px;"></div>
+
+  <!-- Íconos de redes -->
+  <!-- Contenedor con animación y redes, alineados lado a lado -->
+<div class="redes-contacto-container d-flex justify-content-center align-items-center mt-5 flex-wrap flex-md-nowrap gap-5">
+
+  <!-- Animación Lottie -->
+  <div id="lottie-animacion" style="width: 250px; height: 250px;"></div>
+
+  <!-- Íconos de redes alineados a la derecha de la animación -->
+  <div class="iconos-redes d-flex flex-column align-items-start gap-3">
+    <a href="https://wa.me/5492352498108" target="_blank">
+      <i class="bi bi-whatsapp fs-2 text-success"></i>
+    </a>
+    <a href="mailto:martinamanes5@gmail.com">
+      <i class="bi bi-envelope-fill fs-2 text-danger"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">
+      <i class="bi bi-linkedin fs-2 text-primary"></i>
+    </a>
+  </div>
+
+</div>
+
+
+
+
+
+              
+            <script> 
+              const translations = {
+                en: {
+                  tituloPrincipal: "Hi, I'm Martina Manes",
+                  parrafo1: "How to contact me?.",
+                  labelNombre: "Name",
+                  labelEmail: "Email",
+                  labelAsunto: "Subject",
+                  labelMensaje: "Message",
+                  botonEnviar: "Send",
+                  contactoTexto1: "📩 If you prefer to contact me more directly or formally, my email and phone number are:",
+                  contactoTexto2: "📱 You can also message me on WhatsApp:",
+                  whatsappBoton: "Send WhatsApp Message"
+                },
+                es: {
+                  tituloPrincipal: "Hola, soy Martina Manes",
+                  parrafo1: "Como contactrme?.",
+                  labelNombre: "Nombre",
+                  labelEmail: "Correo electrónico",
+                  labelAsunto: "Asunto",
+                  labelMensaje: "Mensaje",
+                  botonEnviar: "Enviar",
+                  contactoTexto1: "📩 Si preferís contactarme de forma más directa o formal, mi mail y mi número de teléfono son:",
+                  contactoTexto2: "📱 También podés escribirme por WhatsApp:",
+                  whatsappBoton: "Enviar mensaje por WhatsApp"
+                }
+              };
+            
+              const toggle = document.getElementById('languageToggle');
+              const elements = document.querySelectorAll('.translate');
+            
+              toggle.addEventListener('change', () => {
+                const lang = toggle.checked ? 'en' : 'es';
+                elements.forEach(el => {
+                  const key = el.getAttribute('data-key');
+                  el.textContent = translations[lang][key];
+                });
+              });
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+            <script>
+              // Carga de la animación
+              lottie.loadAnimation({
+                container: document.getElementById('mianimacion'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'animaciones/animation.json' // Asegurate de tener este archivo en esa carpeta
+              });
+            </script>
 </body>
 </html>

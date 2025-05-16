@@ -378,3 +378,24 @@ button[type="submit"]:hover {
   text-align: center;
   padding: 10px;
 }
+.redes-contacto-container {
+  text-align: center;
+}
+
+.iconos-redes a i {
+  transition: transform 0.3s ease;
+}
+
+.iconos-redes a i:hover {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+  .redes-contacto-container {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .iconos-redes {
+    align-items: center !important;
+  }
+}
