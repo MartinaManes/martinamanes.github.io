@@ -426,7 +426,6 @@ button[type="submit"]:hover {
   text-align: center;
   padding: 10px;
 }
-<<<<<<< HEAD
 .timeline {
   position: relative;
   margin: 3rem auto;
@@ -579,7 +578,6 @@ button[type="submit"]:hover {
   content: "Inglés";
   transform: translateX(66px);
 }
-=======
 .redes-contacto-container {
   text-align: center;
 }
@@ -601,4 +599,8 @@ button[type="submit"]:hover {
     align-items: center !important;
   }
 }
->>>>>>> feat/contactoView
+#lottie-animacion {
+  width: 100% !important;
+  max-width: 550px !important;
+  height: auto;
+}
