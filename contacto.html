@@ -79,6 +79,7 @@
             <button type="submit" class="btn btn-primary w-100 translate" data-key="botonEnviar">Enviar</button>
             </form>
             
+<<<<<<< HEAD
             <div class="contacto-directo mt-4">
               <p class="translate" data-key="contactoTexto1">📩 Si preferís contactarme de forma más directa o formal, mi mail y mi número de teléfono son:</p>
               <p><strong><a href="mailto:martinamanes5@gmail.com">martinamanes5@gmail.com</a></strong></p>
@@ -88,6 +89,42 @@
               <a href="https://wa.me/5492352498108" class="btn btn-success translate" data-key="whatsappBoton" target="_blank">Enviar mensaje por WhatsApp</a>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+=======
+            <!-- Contenedor con animación y redes -->
+<div class="redes-contacto-container d-flex justify-content-center align-items-center flex-column mt-5">
+  <p class="mb-3 translate" data-key="contactoTextoFinal">
+    Si preferís contactarme más formalmente, también podés encontrarme en otras plataformas:
+  </p>
+
+  <!-- Animación Lottie -->
+  <div id="mianimacion" style="width: 300px; height: 300px;"></div>
+
+  <!-- Íconos de redes -->
+  <!-- Contenedor con animación y redes, alineados lado a lado -->
+<div class="redes-contacto-container d-flex justify-content-center align-items-center mt-5 flex-wrap flex-md-nowrap gap-5">
+
+  <!-- Animación Lottie -->
+  <div id="lottie-animacion" style="width: 250px; height: 250px;"></div>
+
+  <!-- Íconos de redes alineados a la derecha de la animación -->
+  <div class="iconos-redes d-flex flex-column align-items-start gap-3">
+    <a href="https://wa.me/5492352498108" target="_blank">
+      <i class="bi bi-whatsapp fs-2 text-success"></i>
+    </a>
+    <a href="mailto:martinamanes5@gmail.com">
+      <i class="bi bi-envelope-fill fs-2 text-danger"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">
+      <i class="bi bi-linkedin fs-2 text-primary"></i>
+    </a>
+  </div>
+
+</div>
+
+
+
+
+>>>>>>> feat/contactoView
 
               
             <script> 
@@ -129,6 +166,16 @@
                 });
               });
             </script>
-            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+            <script>
+              // Carga de la animación
+              lottie.loadAnimation({
+                container: document.getElementById('mianimacion'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'animaciones/animation.json' // Asegurate de tener este archivo en esa carpeta
+              });
+            </script>
 </body>
 </html>
