@@ -30,30 +30,71 @@
             </div>
           </div>
         </div>
-      </nav>
-      <section class="timeline">
-        <h2>Mi trayectoria educativa</h2>
-      
-        <div class="timeline-item" data-aos="fade-up">
-          <div class="timeline-year">2017 - 2022</div>
-          <div class="timeline-content">
-            <img src="imagenes/secundaria.png" alt="Logo Escuela Nacional N°4" class="institucion-logo">
-            <h3>Escuela de educación secundaria nacional N°4</h3>
-            <p>Bachiller en Economía - Chacabuco, Buenos Aires</p>
+      </div>
+  
+      <!-- Toggle de idioma afuera del menú -->
+      <div class="language-toggle d-flex align-items-center ms-2">
+        <label class="switch mb-0">
+          <input type="checkbox" id="languageToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
+  <section class="timeline">
+    <h2 class="translate" data-key="tituloEducacion">Mi trayectoria educativa</h2>
+  
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-year">2017 - 2022</div>
+      <div class="timeline-content">
+        <img src="imagenes/secundaria.png" alt="Logo Escuela Nacional N°4" class="institucion-logo">
+        <h3 class="translate" data-key="escuelaSecundaria">Escuela de educación secundaria nacional N°4</h3>
+        <p class="translate" data-key="bachiller">Bachiller en Economía - Chacabuco, Buenos Aires</p>
+      </div>
+    </div>
+  
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-year">2023 - <br>Actualidad</div>
+      <div class="timeline-content">
+        <img src="imagenes/intech.png" alt="Logo Instituto INTECH N°132" class="institucion-logo">
+        <h3 class="translate" data-key="institutoIntech">Instituto INTECH N°132</h3>
+        <p class="translate" data-key="carrera">Tecnicatura en Análisis de Sistemas</p>
+        <p class="translate" data-key="descripcionCarrera">Estoy aprendiendo programación, bases de datos, diseño web, redes y trabajo en proyectos reales.</p>
+      </div>
+    </div>
+  </section>
+  <script>
+    const translations = {
+  en: {
+    tituloEducacion: "My educational background",
+    escuelaSecundaria: "National Secondary School No. 4",
+    bachiller: "High School in Economics - Chacabuco, Buenos Aires",
+    institutoIntech: "INTECH Institute No. 132",
+    carrera: "Technician in Systems Analysis",
+    descripcionCarrera: "I'm learning programming, databases, web design, networking and working on real projects."
+  },
+  es: {
 
-          </div>
-        </div>
-      
-        <div class="timeline-item" data-aos="fade-up">
-          <div class="timeline-year">2023 - <br>Actualidad</div>
-          <div class="timeline-content">
-            <img src="imagenes/intech.png" alt="Logo Instituto INTECH N°132" class="institucion-logo">
-            <h3>Instituto INTECH N°132</h3>
-            <p>Tecnicatura en Análisis de Sistemas</p>
-            <p>Estoy aprendiendo programación, bases de datos, diseño web, redes y trabajo en proyectos reales.</p>
-          </div>
-        </div>
-      </section>
+    tituloEducacion: "Mi trayectoria educativa",
+    escuelaSecundaria: "Escuela de educación secundaria nacional N°4",
+    bachiller: "Bachiller en Economía - Chacabuco, Buenos Aires",
+    institutoIntech: "Instituto INTECH N°132",
+    carrera: "Tecnicatura en Análisis de Sistemas",
+    descripcionCarrera: "Estoy aprendiendo programación, bases de datos, diseño web, redes y trabajo en proyectos reales."
+  }
+};
+const toggle = document.getElementById('languageToggle');
+  const elements = document.querySelectorAll('.translate');
+
+  toggle.addEventListener('change', () => {
+    const lang = toggle.checked ? 'en' : 'es';
+
+    elements.forEach(el => {
+      const key = el.getAttribute('data-key');
+      el.textContent = translations[lang][key];
+    });
+  });
+  </script>
 
       <script>
         AOS.init();
