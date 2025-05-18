@@ -444,7 +444,6 @@ button[type="submit"]:hover {
   position: relative;
   margin-left: 20px;
   margin-bottom: 2rem;
- 
 }
 
 .timeline-year {
@@ -454,12 +453,11 @@ button[type="submit"]:hover {
   font-weight: bold;
   font-size: 1rem;
   font-family: mifuente2;
-  background-color: #0f0f38; /* Puedes cambiar el color aquí */
+  background-color: #0f0f38;
   color: white;
   padding: 5px 15px;
-  border-radius: 25px; /* Redondeado completo */
-  position: absolute;
-  font-size: 14px; /* Tamaño adecuado */
+  border-radius: 25px;
+  font-size: 14px;
 }
 
 .timeline-content {
@@ -478,6 +476,7 @@ button[type="submit"]:hover {
   margin: 0.5rem 0;
   color: #555;
 }
+
 .institucion-logo {
   width: 60px;
   height: auto;
@@ -603,4 +602,25 @@ button[type="submit"]:hover {
   width: 100% !important;
   max-width: 550px !important;
   height: auto;
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .timeline {
+    border-left: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .timeline-item {
+    margin-left: 0;
+    padding-left: 1rem;
+    border-left: 4px solid #2c135c;
+  }
+
+  .timeline-year {
+    position: relative;
+    left: 0;
+    top: auto;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
 }
