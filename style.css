@@ -387,6 +387,10 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> feat/educacionView
 }
 form {
   background-color: #fff;
@@ -623,4 +627,9 @@ button[type="submit"]:hover {
     margin-bottom: 0.5rem;
     display: inline-block;
   }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> feat/idiomaToggle
+>>>>>>> feat/educacionView
 }
