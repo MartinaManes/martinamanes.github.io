@@ -30,55 +30,63 @@
             </div>
           </div>
         </div>
-      </nav>
-      <section id="experiencia" class="container">
-        <h2 class="experiencia-titulo">Experiencia</h2>
-        <div class="row justify-content-center">
-          <!-- Redes Sociales -->
-          <div class="col-md-3 mb-4" data-aos="fade-up">
-            <div class="card experiencia-card shadow text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-instagram experiencia-icon fs-1 text-primary"></i>
-                <h5 class="experiencia-title">Redes Sociales</h5>
-                <p class="experiencia-text">Gestión de contenido, publicaciones y diseño para redes.</p>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Atención al Público -->
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card experiencia-card shadow text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-person-lines-fill experiencia-icon fs-1 text-danger"></i>
-                <h5 class="experiencia-title">Atención al público</h5>
-                <p class="experiencia-text">Experiencia en trato con clientes y tareas administrativas.</p>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Proyectos Web -->
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card experiencia-card shadow text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-pc-display-horizontal fs-1 text-success"></i>
-                <h5 class="experiencia-title">Proyectos Web</h5>
-                <p class="experiencia-text">Prácticas académicas creando sitios web con HTML, CSS y más.</p>
-              </div>
-            </div>
-          </div>
-    
-          <!-- Trabajo en Equipo -->
-          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="card experiencia-card shadow text-center p-4">
-              <div class="card-body">
-                <i class="bi bi-people-fill experiencia-icon fs-1 text-warning"></i>
-                <h5 class="experiencia-title">Trabajo en equipo</h5>
-                <p class="experiencia-text">Participación en proyectos grupales y organización de tareas.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </div>
+  
+      <!-- Toggle de idioma afuera del menú -->
+      <div class="language-toggle d-flex align-items-center ms-2">
+        <label class="switch mb-0">
+          <input type="checkbox" id="languageToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </nav>
+  <section id="experiencia" class="container mt-4">  
+    <h2 class="experiencia-titulo translate" data-key="titleExperience">Experiencia</h2>  
+    <div class="row justify-content-center">  
+
+      <div class="col-md-3 mb-4" data-aos="fade-up">  
+        <div class="card experiencia-card shadow text-center p-4">  
+          <div class="card-body">  
+            <i class="bi bi-instagram experiencia-icon fs-1 text-primary"></i>  
+            <h5 class="experiencia-title translate" data-key="expSocialMediaTitle">Redes Sociales</h5>  
+            <p class="experiencia-text translate" data-key="expSocialMediaText">Gestión de contenido, publicaciones y diseño para redes.</p>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">  
+        <div class="card experiencia-card shadow text-center p-4">  
+          <div class="card-body">  
+            <i class="bi bi-person-lines-fill experiencia-icon fs-1 text-danger"></i>  
+            <h5 class="experiencia-title translate" data-key="expCustomerServiceTitle">Atención al público</h5>  
+            <p class="experiencia-text translate" data-key="expCustomerServiceText">Experiencia en trato con clientes y tareas administrativas.</p>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">  
+        <div class="card experiencia-card shadow text-center p-4">  
+          <div class="card-body">  
+            <i class="bi bi-pc-display-horizontal fs-1 text-success"></i>  
+            <h5 class="experiencia-title translate" data-key="expWebProjectsTitle">Proyectos Web</h5>  
+            <p class="experiencia-text translate" data-key="expWebProjectsText">Prácticas académicas creando sitios web con HTML, CSS y más.</p>  
+          </div>  
+        </div>  
+      </div>  
+
+      <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">  
+        <div class="card experiencia-card shadow text-center p-4">  
+          <div class="card-body">  
+            <i class="bi bi-people-fill experiencia-icon fs-1 text-warning"></i>  
+            <h5 class="experiencia-title translate" data-key="expTeamworkTitle">Trabajo en equipo</h5>  
+            <p class="experiencia-text translate" data-key="expTeamworkText">Participación en proyectos grupales y organización de tareas.</p>  
+          </div>  
+        </div>  
+      </div>  
+
+    </div>  
+  </section> 
     
       <!-- AOS JS -->
       <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -88,5 +96,68 @@
     
       <!-- Bootstrap JS (opcional) -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+        const translations = {
+          en: {
+            navHome: "Home",
+            navAbout: "About me",
+            navContact: "Contact",
+            navExperience: "Experience",
+            navEducation: "Education",
+            navSkills: "Skills",
+            labelLang: "Español / English",
+    
+            titleExperience: "Experience",
+    
+            expSocialMediaTitle: "Social Media",
+            expSocialMediaText: "Content management, posts and design for social networks.",
+    
+            expCustomerServiceTitle: "Customer Service",
+            expCustomerServiceText: "Experience in customer handling and administrative tasks.",
+    
+            expWebProjectsTitle: "Web Projects",
+            expWebProjectsText: "Academic practices creating websites with HTML, CSS and more.",
+    
+            expTeamworkTitle: "Teamwork",
+            expTeamworkText: "Participation in group projects and task organization."
+          },
+          es: {
+            navHome: "Home",
+            navAbout: "Sobre mi",
+            navContact: "Contacto",
+            navExperience: "Experiencia",
+            navEducation: "Educacion",
+            navSkills: "Habilidades",
+            labelLang: "Español / English",
+    
+            titleExperience: "Experiencia",
+    
+            expSocialMediaTitle: "Redes Sociales",
+            expSocialMediaText: "Gestión de contenido, publicaciones y diseño para redes.",
+    
+            expCustomerServiceTitle: "Atención al público",
+            expCustomerServiceText: "Experiencia en trato con clientes y tareas administrativas.",
+    
+            expWebProjectsTitle: "Proyectos Web",
+            expWebProjectsText: "Prácticas académicas creando sitios web con HTML, CSS y más.",
+    
+            expTeamworkTitle: "Trabajo en equipo",
+            expTeamworkText: "Participación en proyectos grupales y organización de tareas."
+          }
+        };
+    
+        const toggle = document.getElementById('languageToggle');
+        const elements = document.querySelectorAll('.translate');
+    
+        toggle.addEventListener('change', () => {
+          const lang = toggle.checked ? 'en' : 'es';
+          elements.forEach(el => {
+            const key = el.getAttribute('data-key');
+            if(translations[lang][key]){
+              el.textContent = translations[lang][key];
+            }
+          });
+        });
+      </script>
 </body>
 </html>
