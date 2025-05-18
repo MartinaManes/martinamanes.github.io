@@ -25,13 +25,24 @@
           <a class="nav-link" href="experiencia.html">Experiencia</a>
           <a class="nav-link" href="educacion.html">Educacion</a>
           <a class="nav-link" href="habilidades.html">Habilidades</a>
+             
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Toggle de idioma afuera del menú -->
+  <div class="language-toggle d-flex align-items-center ms-2">
+    <label class="switch mb-0">
+      <input type="checkbox" id="languageToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
 </nav>
 
   <main class="container text-center my-5">
-    <h1 class="mb-5 titulo-habilidades">Mis Habilidades</h1>
+    <h1 class="translate" data-key="titulohabilidades">Mis Habilidades</h1>
     <div class="row g-4 justify-content-center">
       <div class="col-6 col-sm-4 col-md-3 col-lg-2">
         <div class="habilidad">
@@ -108,39 +119,88 @@
     </div>
   </main>
   <section class="soft-skills-section">
-    <h2>✨ Habilidades personales</h2>
+    <h2 class="translate" data-key="titulohabilidadespersonales">✨ Habilidades personales</h2>
     <div class="flip-card-container">
+      
       <div class="flip-card">
         <div class="flip-card-inner">
-          <div class="flip-card-front">Trabajo en equipo</div>
-          <div class="flip-card-back">Me adapto a distintos roles, priorizando siempre la colaboración y el objetivo común.</div>
+          <div class="flip-card-front translate" data-key="habilidadTrabajoEquipo">Trabajo en equipo</div>
+          <div class="flip-card-back translate" data-key="descTrabajoEquipo">
+            Me adapto a distintos roles, priorizando siempre la colaboración y el objetivo común.
+          </div>
         </div>
       </div>
   
       <div class="flip-card">
         <div class="flip-card-inner">
-          <div class="flip-card-front">Comunicación</div>
-          <div class="flip-card-back">Expreso ideas con claridad y también sé escuchar, lo que favorece un buen clima laboral.</div>
+          <div class="flip-card-front translate" data-key="habilidadComunicacion">Comunicación</div>
+          <div class="flip-card-back translate" data-key="descComunicacion">
+            Expreso ideas con claridad y también sé escuchar, lo que favorece un buen clima laboral.
+          </div>
         </div>
       </div>
   
       <div class="flip-card">
         <div class="flip-card-inner">
-          <div class="flip-card-front">Inglés básico</div>
-          <div class="flip-card-back">Comprensión de textos técnicos y manejo de vocabulario esencial en informática.</div>
+          <div class="flip-card-front translate" data-key="habilidadIngles">Inglés básico</div>
+          <div class="flip-card-back translate" data-key="descIngles">
+            Comprensión de textos técnicos y manejo de vocabulario esencial en informática.
+          </div>
         </div>
       </div>
   
       <div class="flip-card">
         <div class="flip-card-inner">
-          <div class="flip-card-front">Creatividad</div>
-          <div class="flip-card-back">Busco soluciones originales ante desafíos, aportando ideas en distintos contextos.</div>
+          <div class="flip-card-front translate" data-key="habilidadCreatividad">Creatividad</div>
+          <div class="flip-card-back translate" data-key="descCreatividad">
+            Busco soluciones originales ante desafíos, aportando ideas en distintos contextos.
+          </div>
         </div>
       </div>
+  
     </div>
   </section>
-  
+<script>
+  const translations = {
+  en: {
+    titulohabilidades:"My skills",
+    titulohabilidadespersonales: "✨ Soft skills",
+    habilidadTrabajoEquipo: "Teamwork",
+    descTrabajoEquipo: "I adapt to different roles, always prioritizing collaboration and common goals.",
+    habilidadComunicacion: "Communication",
+    descComunicacion: "I express ideas clearly and know how to listen, which contributes to a positive work environment.",
+    habilidadIngles: "Basic English",
+    descIngles: "Understanding of technical texts and essential IT vocabulary.",
+    habilidadCreatividad: "Creativity",
+    descCreatividad: "I seek original solutions to challenges, contributing ideas in various contexts."
+  },
+  es: {
+    titulohabilidades:"Mis habilidades",
+    titulohabilidadespersonales: "✨ Habilidades personales",
+    habilidadTrabajoEquipo: "Trabajo en equipo",
+    descTrabajoEquipo: "Me adapto a distintos roles, priorizando siempre la colaboración y el objetivo común.",
+    habilidadComunicacion: "Comunicación",
+    descComunicacion: "Expreso ideas con claridad y también sé escuchar, lo que favorece un buen clima laboral.",
+    habilidadIngles: "Inglés básico",
+    descIngles: "Comprensión de textos técnicos y manejo de vocabulario esencial en informática.",
+    habilidadCreatividad: "Creatividad",
+    descCreatividad: "Busco soluciones originales ante desafíos, aportando ideas en distintos contextos."
+  }
+};
+const toggle = document.getElementById('languageToggle');
+    const elements = document.querySelectorAll('.translate');
 
+    toggle.addEventListener('change', () => {
+      const lang = toggle.checked ? 'en' : 'es';
+      elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    });
+
+</script>
 
 </body>
 </html>
