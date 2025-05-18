@@ -598,9 +598,10 @@ button[type="submit"]:hover {
     align-items: center !important;
   }
 }
+#lottie-animacion {
   width: 100% !important;
   max-width: 550px !important;
-  height: auto;
+  height: auto;}
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .timeline {
