@@ -170,6 +170,17 @@
           el.textContent = translations[lang][key];
         }
       });
+        toggle.checked = lang === 'en';
+    localStorage.setItem('language', lang);
+  }
+
+  // Cargar idioma al iniciar
+  const savedLang = localStorage.getItem('language') || 'es';
+  setLanguage(savedLang);
+
+  toggle.addEventListener('change', () => {
+    const lang = toggle.checked ? 'en' : 'es';
+    setLanguage(lang);
     });
   </script>
    
