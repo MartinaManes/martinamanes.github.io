@@ -63,48 +63,84 @@
     </div>
   </section>
   <script>
-    const translations = {
-  en: {
-    tituloEducacion: "My educational background",
-    escuelaSecundaria: "National Secondary School No. 4",
-    bachiller: "High School in Economics - Chacabuco, Buenos Aires",
-    institutoIntech: "INTECH Institute No. 132",
-    carrera: "Technician in Systems Analysis",
-    descripcionCarrera: "I'm learning programming, databases, web design, networking and working on real projects.",
-    nav_home: "Home",
-    nav_about: "About me",
-    nav_contact: "Contact",
-    nav_experience: "Experience",
-    nav_education: "Education",
-    nav_habilidades: "Skills"
-  },
-  es: {
+   const translations = {
+      en: {
+        tituloEducacion: "My educational background",
+        escuelaSecundaria: "National Secondary School No. 4",
+        bachiller: "High School in Economics - Chacabuco, Buenos Aires",
+        institutoIntech: "INTECH Institute No. 132",
+        carrera: "Technician in Systems Analysis",
+        descripcionCarrera:
+          "I'm learning programming, databases, web design, networking and working on real projects.",
+        nav_home: "Home",
+        nav_about: "About me",
+        nav_contact: "Contact",
+        nav_experience: "Experience",
+        nav_education: "Education",
+      },
+      es: {
+        tituloEducacion: "Mi trayectoria educativa",
+        escuelaSecundaria: "Escuela de educación secundaria nacional N°4",
+        bachiller: "Bachiller en Economía - Chacabuco, Buenos Aires",
+        institutoIntech: "Instituto INTECH N°132",
+        carrera: "Tecnicatura en Análisis de Sistemas",
+        descripcionCarrera:
+          "Estoy aprendiendo programación, bases de datos, diseño web, redes y trabajo en proyectos reales.",
+        nav_home: "Inicio",
+        nav_about: "Sobre mí",
+        nav_contact: "Contacto",
+        nav_experience: "Experiencia",
+        nav_education: "Educación",
+      },
+    };
 
-    tituloEducacion: "Mi trayectoria educativa",
-    escuelaSecundaria: "Escuela de educación secundaria nacional N°4",
-    bachiller: "Bachiller en Economía - Chacabuco, Buenos Aires",
-    institutoIntech: "Instituto INTECH N°132",
-    carrera: "Tecnicatura en Análisis de Sistemas",
-    descripcionCarrera: "Estoy aprendiendo programación, bases de datos, diseño web, redes y trabajo en proyectos reales.",
-    nav_home: "Inicio",
-    nav_about: "Sobre mí",
-    nav_contact: "Contacto",
-    nav_experience: "Experiencia",
-    nav_education: "Educación",
-    nav_habilidades: "Habilidades"
-  }
-};
-const toggle = document.getElementById('languageToggle');
-  const elements = document.querySelectorAll('.translate');
+    // Función para obtener parámetro de URL
+    function getLangFromURL() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const langParam = urlParams.get("lang");
+      return langParam === "en" ? "en" : "es"; // por defecto es es
+    }
 
-  toggle.addEventListener('change', () => {
-    const lang = toggle.checked ? 'en' : 'es';
+    // Aplicar traducción
+    function applyTranslations(lang) {
+      const elements = document.querySelectorAll(".translate");
+      elements.forEach((el) => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    }
 
-    elements.forEach(el => {
-      const key = el.getAttribute('data-key');
-      el.textContent = translations[lang][key];
-    });
-  });
+    // Actualizar todos los links para mantener el parámetro lang
+    function updateLinksWithLang(lang) {
+      const links = document.querySelectorAll('a[href$=".html"]');
+      links.forEach((link) => {
+        const url = new URL(link.href, window.location.origin);
+        url.searchParams.set("lang", lang);
+        link.href = url.toString();
+      });
+    }
+
+    // Al cambiar toggle, actualizar URL con lang y recargar la página
+    function setupToggle(lang) {
+      const toggle = document.getElementById("languageToggle");
+      toggle.checked = lang === "en";
+
+      toggle.addEventListener("change", () => {
+        const newLang = toggle.checked ? "en" : "es";
+        const url = new URL(window.location);
+        url.searchParams.set("lang", newLang);
+        window.location.href = url.toString();
+      });
+    }
+
+    // Inicio
+    const currentLang = getLangFromURL();
+    applyTranslations(currentLang);
+    updateLinksWithLang(currentLang);
+    setupToggle(currentLang);
+
   </script>
 
       <script>
