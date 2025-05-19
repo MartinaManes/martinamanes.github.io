@@ -19,12 +19,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-          <a class="nav-link" href="sobremi.html">Sobre mi</a>
-          <a class="nav-link" href="contacto.html">Contacto</a>
-          <a class="nav-link" href="experiencia.html">Experiencia</a>
-          <a class="nav-link" href="educacion.html">Educacion</a>
-          <a class="nav-link" href="habilidades.html">Habilidades</a>
+              <a class="nav-link translate" data-key="nav_home" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link translate" data-key="nav_about" href="sobremi.html">Sobre mi</a>
+              <a class="nav-link translate active" data-key="nav_contact" href="contacto.html">Contacto</a>
+              <a class="nav-link translate" data-key="nav_experience" href="experiencia.html">Experiencia</a>
+              <a class="nav-link translate" data-key="nav_education" href="educacion.html">Educacion</a>
+              <a class="nav-link translate" data-key="nav_habilidades" href="habilidades.html">Habilidades</a>
              
         </div>
       </div>
@@ -47,7 +47,7 @@
       <div class="col-6 col-sm-4 col-md-3 col-lg-2 d-flex">
         <div class="habilidad w-100">
           <img src="imagenes/computer.png" alt="PC" class="img-fluid">
-          <p>Manejo de PC</p>
+          <p class="translate" data-key="pcmanejo">Manejo de PC</p>
         </div>
       </div>
 
@@ -184,7 +184,15 @@
     habilidadIngles: "Basic English",
     descIngles: "Understanding of technical texts and essential IT vocabulary.",
     habilidadCreatividad: "Creativity",
-    descCreatividad: "I seek original solutions to challenges, contributing ideas in various contexts."
+    descCreatividad: "I seek original solutions to challenges, contributing ideas in various contexts.",
+    nav_home: "Home",
+    nav_about: "About me",
+    nav_contact: "Contact",
+    nav_experience: "Experience",
+    nav_education: "Education",
+    nav_habilidades: "Skills",
+    pcmanejo: "PC Management"
+    
   },
   es: {
     titulohabilidades:"Mis habilidades",
@@ -196,7 +204,18 @@
     habilidadIngles: "Inglés básico",
     descIngles: "Comprensión de textos técnicos y manejo de vocabulario esencial en informática.",
     habilidadCreatividad: "Creatividad",
-    descCreatividad: "Busco soluciones originales ante desafíos, aportando ideas en distintos contextos."
+    descCreatividad: "Busco soluciones originales ante desafíos, aportando ideas en distintos contextos.",
+    pcmanejo: "Manejo de PC",
+    nav_home: "Inicio",
+    nav_about: "Sobre mí",
+    nav_contact: "Contacto",
+    nav_experience: "Experiencia",
+    nav_education: "Educación",
+    nav_habilidades: "Habilidades"  
+    
+    
+
+    
   }
 };
 const toggle = document.getElementById('languageToggle');
