@@ -114,7 +114,7 @@
   </script>
 
   <!-- SCRIPT CAMBIO DE IDIOMA -->
-  <script>
+ <script>
   const translations = {
     es: {
       bienvenidoTitulo: "Bienvenid@",
@@ -170,18 +170,19 @@
     });
     toggle.checked = lang === 'en';
     localStorage.setItem('language', lang);
-  )}
+  }
 
-  // Cargar idioma al iniciar
+  // Cargar idioma guardado al cargar la página
   const savedLang = localStorage.getItem('language') || 'es';
   setLanguage(savedLang);
 
-  // Cambiar idioma al hacer toggle
+  // Cambiar idioma cuando se hace toggle
   toggle.addEventListener('change', () => {
     const lang = toggle.checked ? 'en' : 'es';
     setLanguage(lang);
-  }
+  });
 </script>
+
 
 
    
