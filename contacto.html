@@ -38,19 +38,6 @@
       </div>
     </div>
   </nav>
-
-      <!DOCTYPE html>
-      <html lang="es">
-      <head>
-          <meta charset="UTF-8">
-          <title>Contacto</title>
-          <link rel="stylesheet" href="style.css">
-          <!-- Bootstrap CDN -->
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-          <!-- Iconos de Bootstrap -->
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-      </head>
-      <body>
         <div class="container my-5">
           <h2 class="text-center mb-4 translate" data-key="parrafo1">¿Cómo contactarme?</h2>
         
@@ -116,60 +103,51 @@
 
 
               
-            <script> 
-              const translations = {
-                en: {
-                  tituloPrincipal: "Hi, I'm Martina Manes",
-                  parrafo1: "How to contact me?",
-                  labelNombre: "Name",
-                  labelEmail: "Email",
-                  labelAsunto: "Subject",
-                  labelMensaje: "Message",
-                  botonEnviar: "Send",
-                  contactoTexto1: "📩 If you prefer to contact me more directly or formally, my email and phone number are:",
-                  contactoTexto2: "📱 You can also message me on WhatsApp:",
-                  whatsappBoton: "Send WhatsApp Message"
-                  nav_home: "Home",
-                  nav_about: "About me",
-                  nav_contact: "Contact",
-                  nav_experience: "Experience",
-                  nav_education: "Education"
-                  contactoTexto1: "If you prefer to contact me more formally, you can also find me on other platforms:",
-                  
-                },
-                es: {
-                  tituloPrincipal: "Hola, soy Martina Manes",
-                  parrafo1: "Como contactarme?",
-                  labelNombre: "Nombre",
-                  labelEmail: "Correo electrónico",
-                  labelAsunto: "Asunto",
-                  labelMensaje: "Mensaje",
-                  botonEnviar: "Enviar",
-                  contactoTexto1: "📩 Si preferís contactarme de forma más directa o formal, mi mail y mi número de teléfono son:",
-                  contactoTexto2: "📱 También podés escribirme por WhatsApp:",
-                  whatsappBoton: "Enviar mensaje por WhatsApp"
-                  nav_home: "Inicio",
-                  nav_about: "Sobre mí",
-                  nav_contact: "Contacto",
-                  nav_experience: "Experiencia",
-                  nav_education: "Educación"
-                  contactoTexto1: "Si preferís contactarme de forma más directa o formal, tambien podes encontrarme en otras plataformas:",
-              
-                }
-              };
-            
-             const toggle = document.getElementById('languageToggle');
+          <script>
+  const translations = {
+    en: {
+      parrafo1: "How to contact me?",
+      labelNombre: "Name",
+      labelEmail: "Email",
+      labelAsunto: "Subject",
+      labelMensaje: "Message",
+      botonEnviar: "Send",
+      contactoTexto1: "If you prefer to contact me more formally, you can also find me on other platforms:",
+      nav_home: "Home",
+      nav_about: "About me",
+      nav_contact: "Contact",
+      nav_experience: "Experience",
+      nav_education: "Education"
+    },
+    es: {
+      parrafo1: "¿Cómo contactarme?",
+      labelNombre: "Nombre",
+      labelEmail: "Correo electrónico",
+      labelAsunto: "Asunto",
+      labelMensaje: "Mensaje",
+      botonEnviar: "Enviar",
+      contactoTexto1: "Si preferís contactarme de forma más directa o formal, también podés encontrarme en otras plataformas:",
+      nav_home: "Inicio",
+      nav_about: "Sobre mí",
+      nav_contact: "Contacto",
+      nav_experience: "Experiencia",
+      nav_education: "Educación"
+    }
+  };
+
+  const toggle = document.getElementById('languageToggle');
   const elements = document.querySelectorAll('.translate');
 
   toggle.addEventListener('change', () => {
     const lang = toggle.checked ? 'en' : 'es';
-
     elements.forEach(el => {
       const key = el.getAttribute('data-key');
-      el.textContent = translations[lang][key];
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
     });
-  }); 
-            </script>
+  });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
 <script>
   lottie.loadAnimation({
