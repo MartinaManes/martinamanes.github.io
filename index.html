@@ -82,44 +82,55 @@
   AOS.init();
 </script>
 <script>
-  const translations = {
-    en: {
-      tituloPrincipal: "Hi, I'm Martina Manes",
-      parrafo1: "I'm 19 years old and a systems analysis student. I'm passionate about technology, programming, and computer science.",
-      parrafo2: "I'm constantly learning and looking to grow in the IT world.",
-      nav_home: "Home",
-      nav_about: "About me",
-      nav_contact: "Contact",
-      nav_experience: "Experience",
-      nav_education: "Education",
-      nav_habilidades: "Skills"
-        
-    },
-    es: {
-      tituloPrincipal: "Hola, soy Martina Manes",
-      parrafo1: "Tengo 19 años, soy estudiante de análisis de sistemas. Me apasiona la tecnología, la programación y la informática. ",
-      parrafo2: "Estoy en constante aprendizaje y busco sumar experiencia para crecer profesionalmente en el mundo IT",
-      nav_home: "Inicio",
-      nav_about: "Sobre mí",
-      nav_contact: "Contacto",
-      nav_experience: "Experiencia",
-      nav_education: "Educación",
-      nav_habilidades: "Habilidades"    
+    const translations = {
+      en: {
+        tituloPrincipal: "Hi, I'm Martina Manes",
+        parrafo1: "I'm 19 years old and a systems analysis student. I'm passionate about technology, programming, and computer science.",
+        parrafo2: "I'm constantly learning and looking to grow in the IT world.",
+        nav_home: "Home",
+        nav_about: "About me",
+        nav_contact: "Contact",
+        nav_experience: "Experience",
+        nav_education: "Education",
+        nav_habilidades: "Skills"
+      },
+      es: {
+        tituloPrincipal: "Hola, soy Martina Manes",
+        parrafo1: "Tengo 19 años, soy estudiante de análisis de sistemas. Me apasiona la tecnología, la programación y la informática.",
+        parrafo2: "Estoy en constante aprendizaje y busco sumar experiencia para crecer profesionalmente en el mundo IT.",
+        nav_home: "Inicio",
+        nav_about: "Sobre mí",
+        nav_contact: "Contacto",
+        nav_experience: "Experiencia",
+        nav_education: "Educación",
+        nav_habilidades: "Habilidades"
+      }
+    };
+
+    const toggle = document.getElementById('languageToggle');
+    const elements = document.querySelectorAll('.translate');
+
+    function aplicarIdioma(lang) {
+      elements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      toggle.checked = lang === 'en'; // Para que el switch quede en posición correcta
     }
-  };
 
-  const toggle = document.getElementById('languageToggle');
-  const elements = document.querySelectorAll('.translate');
-
-  toggle.addEventListener('change', () => {
-    const lang = toggle.checked ? 'en' : 'es';
-
-    elements.forEach(el => {
-      const key = el.getAttribute('data-key');
-      el.textContent = translations[lang][key];
+    toggle.addEventListener('change', () => {
+      const lang = toggle.checked ? 'en' : 'es';
+      localStorage.setItem('idiomaSeleccionado', lang);
+      aplicarIdioma(lang);
     });
-  });
-</script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const idiomaGuardado = localStorage.getItem('idiomaSeleccionado') || 'es';
+      aplicarIdioma(idiomaGuardado);
+    });
+  </script>
 
 </body>
 </html>
