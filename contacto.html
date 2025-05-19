@@ -158,27 +158,29 @@
                 }
               };
             
-              const toggle = document.getElementById('languageToggle');
-              const elements = document.querySelectorAll('.translate');
-            
-              toggle.addEventListener('change', () => {
-                const lang = toggle.checked ? 'en' : 'es';
-                elements.forEach(el => {
-                  const key = el.getAttribute('data-key');
-                  el.textContent = translations[lang][key];
-                });
-              });
+             const toggle = document.getElementById('languageToggle');
+  const elements = document.querySelectorAll('.translate');
+
+  toggle.addEventListener('change', () => {
+    const lang = toggle.checked ? 'en' : 'es';
+
+    elements.forEach(el => {
+      const key = el.getAttribute('data-key');
+      el.textContent = translations[lang][key];
+    });
+  }); 
             </script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
 <script>
   lottie.loadAnimation({
     container: document.getElementById('mianimacion'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: 'animaciones/a
-</html>nimation.json'
+    path: 'animaciones/animation.json'
   });
 </script>
+
+  
             
 </body>
