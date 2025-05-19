@@ -115,62 +115,60 @@
 
   <!-- SCRIPT CAMBIO DE IDIOMA -->
   <script>
-    const translations = {
-      es: {
-        bienvenidoTitulo: "Bienvenid@",
-        bienvenidoTexto: "En esta sección me vas a conocer más.",
-        edadTitulo: "Edad y Fecha de Nacimiento",
-        edadTexto: "Edad: 19 años | Fecha de Nacimiento: 14 de junio de 2005",
-        lugarTitulo: "Lugar de Nacimiento",
-        lugarTexto: "Ciudad de Chacabuco, Buenos Aires, Argentina",
-        suenosTitulo: "Mis Sueños",
-        suenosTexto1: "Me gustaría trabajar en tecnología o redes sociales, porque son cosas que realmente disfruto.",
-        suenosTexto2: "Mi meta es poder vivir de lo que me gusta.",
-        atributosTitulo: "Atributos",
-        atributosTexto1: "Soy una persona apasionada, comprometida, creativa y atenta.",
-        atributosTexto2: "Siempre dispuesta a aprender cosas nuevas.",
-        nav_home: "Inicio",
-        nav_about: "Sobre mí",
-        nav_contact: "Contacto",
-        nav_experience: "Experiencia",
-        nav_education: "Educación",
-        nav_habilidades: "Habilidades"   
-          
-      },
-      en: {
-        bienvenidoTitulo: "Welcome",
-        bienvenidoTexto: "In this section you will get to know me better.",
-        edadTitulo: "Age and Birthdate",
-        edadTexto: "Age: 19 years old | Birthdate: June 14, 2005",
-        lugarTitulo: "Place of Birth",
-        lugarTexto: "City of Chacabuco, Buenos Aires, Argentina",
-        suenosTitulo: "My Dreams",
-        suenosTexto1: "I’d love to work in tech or social media, because I truly enjoy those things.",
-        suenosTexto2: "My goal is to live doing what I love.",
-        atributosTitulo: "Attributes",
-        atributosTexto1: "I’m passionate, committed, creative and attentive.",
-        atributosTexto2: "Always willing to learn new things.",
-        nav_home: "Home",
-        nav_about: "About me",
-        nav_contact: "Contact",
-        nav_experience: "Experience",
-        nav_education: "Education",
-        nav_habilidades: "Skills"
+  const translations = {
+    es: {
+      bienvenidoTitulo: "Bienvenid@",
+      bienvenidoTexto: "En esta sección me vas a conocer más.",
+      edadTitulo: "Edad y Fecha de Nacimiento",
+      edadTexto: "Edad: 19 años | Fecha de Nacimiento: 14 de junio de 2005",
+      lugarTitulo: "Lugar de Nacimiento",
+      lugarTexto: "Ciudad de Chacabuco, Buenos Aires, Argentina",
+      suenosTitulo: "Mis Sueños",
+      suenosTexto1: "Me gustaría trabajar en tecnología o redes sociales, porque son cosas que realmente disfruto.",
+      suenosTexto2: "Mi meta es poder vivir de lo que me gusta.",
+      atributosTitulo: "Atributos",
+      atributosTexto1: "Soy una persona apasionada, comprometida, creativa y atenta.",
+      atributosTexto2: "Siempre dispuesta a aprender cosas nuevas.",
+      nav_home: "Inicio",
+      nav_about: "Sobre mí",
+      nav_contact: "Contacto",
+      nav_experience: "Experiencia",
+      nav_education: "Educación",
+      nav_habilidades: "Habilidades"
+    },
+    en: {
+      bienvenidoTitulo: "Welcome",
+      bienvenidoTexto: "In this section you will get to know me better.",
+      edadTitulo: "Age and Birthdate",
+      edadTexto: "Age: 19 years old | Birthdate: June 14, 2005",
+      lugarTitulo: "Place of Birth",
+      lugarTexto: "City of Chacabuco, Buenos Aires, Argentina",
+      suenosTitulo: "My Dreams",
+      suenosTexto1: "I’d love to work in tech or social media, because I truly enjoy those things.",
+      suenosTexto2: "My goal is to live doing what I love.",
+      atributosTitulo: "Attributes",
+      atributosTexto1: "I’m passionate, committed, creative and attentive.",
+      atributosTexto2: "Always willing to learn new things.",
+      nav_home: "Home",
+      nav_about: "About me",
+      nav_contact: "Contact",
+      nav_experience: "Experience",
+      nav_education: "Education",
+      nav_habilidades: "Skills"
+    }
+  };
+
+  const toggle = document.getElementById('languageToggle');
+  const elements = document.querySelectorAll('.translate');
+
+  function setLanguage(lang) {
+    elements.forEach(el => {
+      const key = el.getAttribute('data-key');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
       }
-    };
-
-    const toggle = document.getElementById('languageToggle');
-    const elements = document.querySelectorAll('.translate');
-
-    toggle.addEventListener('change', () => {
-      const lang = toggle.checked ? 'en' : 'es';
-      elements.forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-        toggle.checked = lang === 'en';
+    });
+    toggle.checked = lang === 'en';
     localStorage.setItem('language', lang);
   )}
 
@@ -178,11 +176,13 @@
   const savedLang = localStorage.getItem('language') || 'es';
   setLanguage(savedLang);
 
+  // Cambiar idioma al hacer toggle
   toggle.addEventListener('change', () => {
     const lang = toggle.checked ? 'en' : 'es';
     setLanguage(lang);
-    });
-  </script>
+  });
+</script>
+
    
 </body>
 </html>
