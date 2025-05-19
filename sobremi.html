@@ -23,9 +23,15 @@
               <a class="nav-link" href="educacion.html">Educacion</a>
               <a class="nav-link" href="habilidades.html">Habilidades</a>
 
+                  
+              
             </div>
           </div>
-        <div class="language-toggle d-flex align-items-center ms-2">
+        </div>
+      </div>
+  
+      <!-- Toggle de idioma afuera del menú -->
+      <div class="language-toggle d-flex align-items-center ms-2">
         <label class="switch mb-0">
           <input type="checkbox" id="languageToggle">
           <span class="slider"></span>
@@ -38,32 +44,52 @@
   <div class="carrusel-container">
     <div class="carrusel">
       <div class="carrusel-item animate">
-        <h2 class="translate" data-key="bienvenidoTitulo">Bienvenid@</h2>
-        <p class="translate" data-key="bienvenidoTexto">En esta sección me vas a conocer más.</p>
+        <div class="contenido-slide">
+          <h2 class="translate" data-key="bienvenidoTitulo">Bienvenid@</h2>
+          <p class="translate" data-key="bienvenidoTexto">En esta sección me vas a conocer más.</p>
+        </div>
       </div>
       <div class="carrusel-item animate">
-        <h2 class="translate" data-key="edadTitulo">Edad y Fecha de Nacimiento</h2>
-        <p class="translate" data-key="edadTexto">Edad: 19 años | Fecha de Nacimiento: 14 de junio de 2005</p>
+        <div class="contenido-slide">
+          <h2 class="translate" data-key="edadTitulo">Edad y Fecha de Nacimiento</h2>
+          <p class="translate" data-key="edadTexto">Edad: 19 años | Fecha de Nacimiento: 14 de junio de 2005</p>
+        </div>
       </div>
       <div class="carrusel-item animate">
-        <h2 class="translate" data-key="lugarTitulo">Lugar de Nacimiento</h2>
-        <p class="translate" data-key="lugarTexto">Ciudad de Chacabuco, Buenos Aires, Argentina</p>
+        <div class="contenido-slide">
+          <h2 class="translate" data-key="lugarTitulo">Lugar de Nacimiento</h2>
+          <p class="translate" data-key="lugarTexto">Ciudad de Chacabuco, Buenos Aires, Argentina</p>
+        </div>
       </div>
       <div class="carrusel-item animate">
-        <h2 class="translate" data-key="suenosTitulo">Mis Sueños</h2>
-        <p class="translate" data-key="suenosTexto1">Me gustaría trabajar en tecnología o redes sociales, porque son cosas que realmente disfruto.</p>
-        <p class="translate" data-key="suenosTexto2">Mi meta es poder vivir de lo que me gusta.</p>
+        <div class="contenido-slide">
+          <h2 class="translate" data-key="suenosTitulo">Mis Sueños</h2>
+          <p class="translate" data-key="suenosTexto1">Me gustaría trabajar en tecnología o redes sociales, porque son cosas que realmente disfruto.</p>
+          <p class="translate" data-key="suenosTexto2">Mi meta es poder vivir de lo que me gusta.</p>
+        </div>
       </div>
       <div class="carrusel-item animate">
-        <h2 class="translate" data-key="atributosTitulo">Atributos</h2>
-        <p class="translate" data-key="atributosTexto1">Soy una persona apasionada, comprometida, creativa y atenta.</p>
-        <p class="translate" data-key="atributosTexto2">Siempre dispuesta a aprender cosas nuevas.</p>
+        <div class="contenido-slide">
+          <h2 class="translate" data-key="atributosTitulo">Atributos</h2>
+          <p class="translate" data-key="atributosTexto1">Soy una persona apasionada, comprometida, creativa y atenta.</p>
+          <p class="translate" data-key="atributosTexto2">Siempre dispuesta a aprender cosas nuevas.</p>
+        </div>
+      </div>
+      <div class="carrusel-item animate">
+        <div class="contenido-slide">
+          <h2>¿Te gustaría ver mi CV completo?</h2>
+          <p>Si deseas obtener más detalles sobre mi formación y experiencia, podés ver mi CV en formato IMAGEN:</p>
+          <a href="imagenes/cvfoto.jpg" class="btn btn-primary mt-3" target="_blank">Ver mi CV en imagen</a>
+        </div>
       </div>
     </div>
+  </div>
+  
 
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- SCRIPT DE CARRUSEL -->
   <script>
